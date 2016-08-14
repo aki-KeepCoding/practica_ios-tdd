@@ -11,5 +11,5 @@
 @interface Euro : NSObject
 @property (nonatomic, readonly) NSInteger amount;
 - (id) initWithAmount:(NSInteger) amount;
-- (void) times: (NSInteger) multiplier;
+- (Euro *) times: (NSInteger) multiplier;
 @end

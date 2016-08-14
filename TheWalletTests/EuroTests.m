@@ -17,9 +17,9 @@
 
 - (void) testMultiplication
 {
-    Euro *euro = [[Euro alloc] initWithAmount: 5];
-    [euro times: 2];
+    Euro *fiveEuros = [[Euro alloc] initWithAmount: 5];
+    Euro *result = [euro times: 2];
     
-    XCTAssertEqual(euro.amount, 10, @"5 euros * 2 should be 10 euros");
+    XCTAssertEqual(result.amount, 10, @"5 euros * 2 should be 10 euros");
 }
 @end
