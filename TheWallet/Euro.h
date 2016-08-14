@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Euro : NSObject
-@property (nonatomic, readonly) NSInteger amount;
 - (id) initWithAmount:(NSInteger) amount;
 - (Euro *) times: (NSInteger) multiplier;
 @end
