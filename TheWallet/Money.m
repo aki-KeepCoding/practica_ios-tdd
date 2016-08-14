@@ -7,6 +7,7 @@
 //
 
 #import "Money.h"
+#import "NSObject+GNUStepAddons.h"
 
 @interface Money()
 @property (nonatomic) NSInteger amount;
@@ -23,8 +24,9 @@
 }
 - (Money *) times: (NSInteger) multiplier
 {
-    // ToDo: Debería ser una clase abstracta
-    return self;
+    // Al ser un método abstracto la implementación de
+    //   times: debería estar en manos de la subclase
+    return [self sublclassResponsibility:_cmd];
 }
 
 @end

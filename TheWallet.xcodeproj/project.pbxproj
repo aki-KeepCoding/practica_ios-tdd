@@ -12,6 +12,9 @@
 		6182ABFB1D608DB400672839 /* Dollar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABF91D608DB400672839 /* Dollar.m */; };
 		6182ABFE1D608FAC00672839 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABFD1D608FAC00672839 /* Money.m */; };
 		6182ABFF1D608FAC00672839 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABFD1D608FAC00672839 /* Money.m */; };
+		6182AC031D60911500672839 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */; };
+		6182AC041D60911500672839 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */; };
+		6182AC061D6091AC00672839 /* MoneyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC051D6091AC00672839 /* MoneyTests.m */; };
 		61E219E61D6076B100670C17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E51D6076B100670C17 /* main.m */; };
 		61E219E91D6076B100670C17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E81D6076B100670C17 /* AppDelegate.m */; };
 		61E219EC1D6076B100670C17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219EB1D6076B100670C17 /* ViewController.m */; };
@@ -47,6 +50,9 @@
 		6182ABF91D608DB400672839 /* Dollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dollar.m; sourceTree = "<group>"; };
 		6182ABFC1D608FAC00672839 /* Money.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Money.h; sourceTree = "<group>"; };
 		6182ABFD1D608FAC00672839 /* Money.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Money.m; sourceTree = "<group>"; };
+		6182AC011D60911500672839 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
+		6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
+		6182AC051D6091AC00672839 /* MoneyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTests.m; sourceTree = "<group>"; };
 		61E219E11D6076B100670C17 /* TheWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E219E51D6076B100670C17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61E219E71D6076B100670C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6182AC001D6090DB00672839 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				6182AC011D60911500672839 /* NSObject+GNUStepAddons.h */,
+				6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
 		61E219D81D6076B100670C17 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +129,7 @@
 		61E219E31D6076B100670C17 /* TheWallet */ = {
 			isa = PBXGroup;
 			children = (
+				6182AC001D6090DB00672839 /* categories */,
 				61E21A1A1D60787E00670C17 /* models */,
 				61E219E71D6076B100670C17 /* AppDelegate.h */,
 				61E219E81D6076B100670C17 /* AppDelegate.m */,
@@ -159,6 +175,7 @@
 			children = (
 				61E21A181D6077E200670C17 /* EuroTests.m */,
 				6182ABF61D608CE800672839 /* DollarTests.m */,
+				6182AC051D6091AC00672839 /* MoneyTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -308,6 +325,7 @@
 			files = (
 				6182ABFE1D608FAC00672839 /* Money.m in Sources */,
 				6182ABFA1D608DB400672839 /* Dollar.m in Sources */,
+				6182AC031D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
 				61E21A1D1D60789300670C17 /* Euro.m in Sources */,
 				61E219EC1D6076B100670C17 /* ViewController.m in Sources */,
 				61E219E91D6076B100670C17 /* AppDelegate.m in Sources */,
@@ -320,8 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6182ABFB1D608DB400672839 /* Dollar.m in Sources */,
+				6182AC041D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
 				61E21A191D6077E200670C17 /* EuroTests.m in Sources */,
 				6182ABFF1D608FAC00672839 /* Money.m in Sources */,
+				6182AC061D6091AC00672839 /* MoneyTests.m in Sources */,
 				6182ABF71D608CE800672839 /* DollarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
