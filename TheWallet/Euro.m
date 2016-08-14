@@ -27,4 +27,10 @@
     return [[Euro alloc] initWithAmount:[self amount] * multiplier];
 }
 
+#pragma - overriden
+- (BOOL) isEqual:(id)object
+{
+    return [self amount] == [object amount];
+}
+
 @end
