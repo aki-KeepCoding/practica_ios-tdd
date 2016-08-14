@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Money.h"
 
-@interface Dollar : NSObject
+@interface Dollar : Money
 - (id) initWithAmount: (NSInteger) amount;
 - (Dollar *) times: (NSInteger) multiplier;
 @end

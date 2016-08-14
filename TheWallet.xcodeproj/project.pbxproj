@@ -10,6 +10,8 @@
 		6182ABF71D608CE800672839 /* DollarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABF61D608CE800672839 /* DollarTests.m */; };
 		6182ABFA1D608DB400672839 /* Dollar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABF91D608DB400672839 /* Dollar.m */; };
 		6182ABFB1D608DB400672839 /* Dollar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABF91D608DB400672839 /* Dollar.m */; };
+		6182ABFE1D608FAC00672839 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABFD1D608FAC00672839 /* Money.m */; };
+		6182ABFF1D608FAC00672839 /* Money.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182ABFD1D608FAC00672839 /* Money.m */; };
 		61E219E61D6076B100670C17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E51D6076B100670C17 /* main.m */; };
 		61E219E91D6076B100670C17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E81D6076B100670C17 /* AppDelegate.m */; };
 		61E219EC1D6076B100670C17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219EB1D6076B100670C17 /* ViewController.m */; };
@@ -43,6 +45,8 @@
 		6182ABF61D608CE800672839 /* DollarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DollarTests.m; sourceTree = "<group>"; };
 		6182ABF81D608DB400672839 /* Dollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dollar.h; sourceTree = "<group>"; };
 		6182ABF91D608DB400672839 /* Dollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dollar.m; sourceTree = "<group>"; };
+		6182ABFC1D608FAC00672839 /* Money.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Money.h; sourceTree = "<group>"; };
+		6182ABFD1D608FAC00672839 /* Money.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Money.m; sourceTree = "<group>"; };
 		61E219E11D6076B100670C17 /* TheWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E219E51D6076B100670C17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61E219E71D6076B100670C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				61E21A1C1D60789300670C17 /* Euro.m */,
 				6182ABF81D608DB400672839 /* Dollar.h */,
 				6182ABF91D608DB400672839 /* Dollar.m */,
+				6182ABFC1D608FAC00672839 /* Money.h */,
+				6182ABFD1D608FAC00672839 /* Money.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6182ABFE1D608FAC00672839 /* Money.m in Sources */,
 				6182ABFA1D608DB400672839 /* Dollar.m in Sources */,
 				61E21A1D1D60789300670C17 /* Euro.m in Sources */,
 				61E219EC1D6076B100670C17 /* ViewController.m in Sources */,
@@ -314,6 +321,7 @@
 			files = (
 				6182ABFB1D608DB400672839 /* Dollar.m in Sources */,
 				61E21A191D6077E200670C17 /* EuroTests.m in Sources */,
+				6182ABFF1D608FAC00672839 /* Money.m in Sources */,
 				6182ABF71D608CE800672839 /* DollarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
