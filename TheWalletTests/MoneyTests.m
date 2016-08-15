@@ -38,6 +38,14 @@
     
 }
 
+- (void) testDifferentCurrencies
+{
+    Money *euro = [Money euroWithAmount:1];
+    Money *dollar = [Money dollarWithAmount:1];
+    
+    XCTAssertNotEqualObjects(euro, dollar, @"Different currencies should not be equal with same amount");
+}
+
 - (void) testHash
 {
     Money *a = [Money euroWithAmount: 2];
