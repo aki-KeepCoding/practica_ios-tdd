@@ -29,4 +29,10 @@
     return [self sublclassResponsibility:_cmd];
 }
 
+#pragma - overriden
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@%ld>", [self class], (long)[self amount]];
+}
+
 @end
