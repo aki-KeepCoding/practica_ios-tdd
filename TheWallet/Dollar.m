@@ -14,27 +14,9 @@
 @end
 @implementation Dollar
 
-- (id) initWithAmount:(NSInteger)amount
-{
-    if (self = [super init]) {
-        _amount = amount;
-    }
-    return self;
-}
-
 - (Dollar *) times:(NSInteger)multiplier
 {
     return [[Dollar alloc] initWithAmount:[self amount] * multiplier];
 }
 
-#pragma - overriden
-- (BOOL) isEqual:(id)object
-{
-    return [self amount] == [object amount];
-}
-
-- (NSUInteger) hash
-{
-    return (NSUInteger) [self amount];
-}
 @end
