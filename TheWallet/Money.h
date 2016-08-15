@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Money : NSObject
++ (id) euroWithAmount: (NSInteger) amount;
++ (id) dollarWithAmount: (NSInteger) amount;
 - (id) initWithAmount: (NSInteger) amount;
 - (Money *) times: (NSInteger) multiplier;
 @end

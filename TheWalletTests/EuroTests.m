@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Euro.h"
+#import "Money.h"
 
 @interface EuroTests : XCTestCase
 
@@ -17,18 +18,17 @@
 
 - (void) testMultiplication
 {
-    Euro *fiveEuros = [[Euro alloc] initWithAmount: 5];
-    Euro *tenEuros = [[Euro alloc] initWithAmount:10];
+    Euro *fiveEuros = [Money euroWithAmount: 5];
+    Euro *tenEuros = [Money euroWithAmount: 10];
     Euro *result = [fiveEuros times: 2];
     
     XCTAssertEqualObjects(result, tenEuros, @"5 euros * 2 should be 10 euros");
-    
 }
 
 - (void) testEquality
 {
-    Euro *fiveEuros = [[Euro alloc] initWithAmount:5];
-    Euro *tenEuros = [[Euro alloc] initWithAmount:10];
+    Euro *fiveEuros = [Money euroWithAmount: 5];
+    Euro *tenEuros = [Money euroWithAmount: 10];
     Euro *result = [fiveEuros times:2];
     
     XCTAssertEqualObjects(result, tenEuros, @"Equivalent objects should be equals");
@@ -38,15 +38,15 @@
 
 - (void) testHash
 {
-    Euro *a = [[Euro alloc] initWithAmount:2];
-    Euro *b = [[Euro alloc] initWithAmount:2];
+    Euro *a = [Money euroWithAmount: 2];
+    Euro *b = [Money euroWithAmount: 2];
     
     XCTAssertEqual([a hash], [b hash], @"Equivalent Euros must have same hash");
 }
 
 - (void) testAmountValue
 {
-    Euro *euro = [[Euro alloc] initWithAmount:5];
+    Euro *euro = [Money euroWithAmount: 5];
     
     // Ignorar para el selector amount
 #pragma clang diagnostic push

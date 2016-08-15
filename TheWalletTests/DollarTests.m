@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Dollar.h"
+#import "Money.h"
 
 @interface DollarTests : XCTestCase
 
@@ -17,8 +18,8 @@
 
 - (void) testMultiplication
 {
-    Dollar *fiveDollars = [[Dollar alloc] initWithAmount: 5];
-    Dollar *tenDollars = [[Dollar alloc] initWithAmount:10];
+    Dollar *fiveDollars = [Money dollarWithAmount: 5];
+    Dollar *tenDollars = [Dollar dollarWithAmount:10];
     Dollar *result = [fiveDollars times: 2];
     
     XCTAssertEqualObjects(result, tenDollars, @"5 dollars * 2 should be 10 dollars");
@@ -27,8 +28,8 @@
 
 - (void) testEquality
 {
-    Dollar *fiveDollars = [[Dollar alloc] initWithAmount:5];
-    Dollar *tenDollars = [[Dollar alloc] initWithAmount:10];
+    Dollar *fiveDollars = [Money dollarWithAmount: 5];
+    Dollar *tenDollars = [Money dollarWithAmount: 10];
     Dollar *result = [fiveDollars times:2];
     
     XCTAssertEqualObjects(result, tenDollars, @"Equivalent objects should be equals");
@@ -37,15 +38,15 @@
 
 - (void) testHash
 {
-    Dollar *a = [[Dollar alloc] initWithAmount:1];
-    Dollar *b = [[Dollar alloc] initWithAmount:1];
+    Dollar *a = [Money dollarWithAmount: 1];
+    Dollar *b = [Money dollarWithAmount: 1];
     
     XCTAssertEqual([a hash], [b hash], @"Equivalent Dollars must have same hash");
 }
 
 - (void) testAmountValue
 {
-    Dollar *dollar = [[Dollar alloc] initWithAmount:5];
+    Dollar *dollar = [Money dollarWithAmount: 5];
     
     // Ignorar para el selector amount
 #pragma clang diagnostic push

@@ -9,8 +9,20 @@
 #import "Money.h"
 #import "NSObject+GNUStepAddons.h"
 #import "Money-Private.h"
+#import "Dollar.h"
+#import "Euro.h"
 
 @implementation Money
+
++ (id) euroWithAmount: (NSInteger) amount
+{
+    return [[Euro alloc] initWithAmount:amount];
+}
+
++ (id) dollarWithAmount: (NSInteger) amount
+{
+    return [[Dollar alloc] initWithAmount:amount];
+}
 
 - (id) initWithAmount: (NSInteger) amount
 {
