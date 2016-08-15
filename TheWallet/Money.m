@@ -7,20 +7,22 @@
 //
 
 #import "Money.h"
-#import "Money-Private.h"
-#import "Dollar.h"
-#import "Euro.h"
+
+@interface Money()
+@property (nonatomic, strong) NSNumber *amount;
+@end
+
 
 @implementation Money
 
 + (id) euroWithAmount: (NSInteger) amount
 {
-    return [[Euro alloc] initWithAmount:amount currency:@"EUR"];
+    return [[Money alloc] initWithAmount:amount currency:@"EUR"];
 }
 
 + (id) dollarWithAmount: (NSInteger) amount
 {
-    return [[Dollar alloc] initWithAmount:amount currency:@"USD"];
+    return [[Money alloc] initWithAmount:amount currency:@"USD"];
 }
 
 - (id) initWithAmount: (NSInteger) amount currency: (NSString *) currency
