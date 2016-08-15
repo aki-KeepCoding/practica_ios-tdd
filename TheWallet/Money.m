@@ -7,7 +7,6 @@
 //
 
 #import "Money.h"
-#import "NSObject+GNUStepAddons.h"
 #import "Money-Private.h"
 #import "Dollar.h"
 #import "Euro.h"
@@ -31,12 +30,12 @@
     }
     return self;
 }
-- (Money *) times: (NSInteger) multiplier
+
+- (id) times:(NSInteger)multiplier
 {
-    // Al ser un método abstracto la implementación de
-    //   times: debería estar en manos de la subclase
-    return [self sublclassResponsibility:_cmd];
+    return [[Money alloc] initWithAmount:[[self amount] integerValue] * multiplier];
 }
+
 
 #pragma - overriden
 - (NSString *)description

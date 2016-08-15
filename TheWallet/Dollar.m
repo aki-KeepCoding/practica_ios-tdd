@@ -11,9 +11,4 @@
 
 @implementation Dollar
 
-- (Dollar *) times:(NSInteger)multiplier
-{
-    return [[Dollar alloc] initWithAmount:[[self amount] integerValue] * multiplier];
-}
-
 @end

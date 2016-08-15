@@ -10,5 +10,5 @@
 #import "Money.h"
 
 @interface Dollar : Money
-- (Dollar *) times: (NSInteger) multiplier;
+
 @end
