@@ -6,8 +6,10 @@
 //  Copyright © 2016 AOA. All rights reserved.
 //
 
-#ifndef Money_Private_h
-#define Money_Private_h
 
+#import <Foundation/Foundation.h>
+#import "Money.h"
 
-#endif /* Money_Private_h */
+@interface Money()
+@property (nonatomic, strong) NSNumber *amount;
+@end

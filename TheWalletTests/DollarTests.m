@@ -38,8 +38,19 @@
 - (void) testHash
 {
     Dollar *a = [[Dollar alloc] initWithAmount:1];
-    Dollar *b = [[Dollar alloc ] initWithAmount:1];
+    Dollar *b = [[Dollar alloc] initWithAmount:1];
     
     XCTAssertEqual([a hash], [b hash], @"Equivalent Dollars must have same hash");
+}
+
+- (void) testAmountValue
+{
+    Dollar *dollar = [[Dollar alloc] initWithAmount:5];
+    
+    // Ignorar para el selector amount
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    XCTAssertEqual([[dollar performSelector:@selector(amount)] integerValue], 5, @"Initialized amount should be equal to assigned value");
+#pragma clang diagnostic pop
 }
 @end

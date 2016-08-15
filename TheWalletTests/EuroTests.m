@@ -43,4 +43,15 @@
     
     XCTAssertEqual([a hash], [b hash], @"Equivalent Euros must have same hash");
 }
+
+- (void) testAmountValue
+{
+    Euro *euro = [[Euro alloc] initWithAmount:5];
+    
+    // Ignorar para el selector amount
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    XCTAssertEqual([[euro performSelector:@selector(amount)] integerValue], 5, @"Initialized amount should be equal to assigned value");
+#pragma clang diagnostic pop
+}
 @end

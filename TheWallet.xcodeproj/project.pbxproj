@@ -53,6 +53,7 @@
 		6182AC011D60911500672839 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		6182AC051D6091AC00672839 /* MoneyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTests.m; sourceTree = "<group>"; };
+		6182AC071D61D94500672839 /* Money-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money-Private.h"; sourceTree = "<group>"; };
 		61E219E11D6076B100670C17 /* TheWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E219E51D6076B100670C17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61E219E71D6076B100670C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 				6182ABF91D608DB400672839 /* Dollar.m */,
 				6182ABFC1D608FAC00672839 /* Money.h */,
 				6182ABFD1D608FAC00672839 /* Money.m */,
+				6182AC071D61D94500672839 /* Money-Private.h */,
 			);
 			name = models;
 			sourceTree = "<group>";

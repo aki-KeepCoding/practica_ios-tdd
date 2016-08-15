@@ -7,16 +7,13 @@
 //
 
 #import "Euro.h"
-
-@interface Euro()
-@property (nonatomic) NSInteger amount;
-@end
+#import "Money-Private.h"
 
 @implementation Euro
 
 - (Euro *) times:(NSInteger)multiplier
 {
-    return [[Euro alloc] initWithAmount:[self amount] * multiplier];
+    return [[Euro alloc] initWithAmount:[[self amount] integerValue] * multiplier];
 }
 
 

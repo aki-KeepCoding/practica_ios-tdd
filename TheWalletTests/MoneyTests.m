@@ -20,4 +20,6 @@
     Money *money = [[Money alloc] initWithAmount:5];
     XCTAssertThrows([money times: 2], @"Direct call to times: from Money should raise an exception");
 }
+
+
 @end
