@@ -15,5 +15,9 @@
 
 @implementation MoneyTests
 
-
+- (void) testCurrencies
+{
+    XCTAssertEqualObjects(@"EUR", [[Money euroWithAmount:2] currency], @"The currency of euro should be EUR");
+    XCTAssertEqualObjects(@"USD", [[Money dollarWithAmount:2] currency], @"The currency of dollar should be USD");
+}
 @end
