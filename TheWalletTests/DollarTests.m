@@ -22,6 +22,7 @@
     Dollar *result = [fiveDollars times: 2];
     
     XCTAssertEqualObjects(result, tenDollars, @"5 dollars * 2 should be 10 dollars");
+    
 }
 
 - (void) testEquality
@@ -31,6 +32,7 @@
     Dollar *result = [fiveDollars times:2];
     
     XCTAssertEqualObjects(result, tenDollars, @"Equivalent objects should be equals");
+    XCTAssertFalse([fiveDollars isEqual:tenDollars], @"Non equivalent objects should not be equals");
 }
 
 - (void) testHash
