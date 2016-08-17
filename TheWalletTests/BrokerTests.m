@@ -48,4 +48,19 @@
     
     XCTAssertEqualObjects(reduced, fiveEuros, @"10$ = 5€ with 2:1 tax");
 }
+
+- (void) testThatHashIsAmount
+{
+    Money *oneEuro = [Money euroWithAmount:1];
+    
+    XCTAssertEqual(1, [oneEuro hash], @"one euro hash shoud be = 1");
+}
+
+- (void) testDescription
+{
+    Money *oneEuro = [Money euroWithAmount:1];
+    NSString *desc = @"<Money: 1>";
+    
+    XCTAssertEqualObjects(desc, [oneEuro description], @"One euro Description shoud be <Money: 1>");
+}
 @end
