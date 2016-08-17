@@ -14,4 +14,5 @@
 + (id) dollarWithAmount: (NSInteger) amount;
 - (id) initWithAmount: (NSInteger) amount currency: (NSString *) currency;
 - (id) times: (NSInteger) multiplier;
+- (Money *) plus: (Money *) other;
 @end

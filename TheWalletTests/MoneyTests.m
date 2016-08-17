@@ -77,4 +77,11 @@
     XCTAssertEqualObjects(@"EUR", [[Money euroWithAmount:2] currency], @"The currency of euro should be EUR");
     XCTAssertEqualObjects(@"USD", [[Money dollarWithAmount:2] currency], @"The currency of dollar should be USD");
 }
+
+- (void) testSimpleAddition
+{
+    XCTAssertEqualObjects([[Money dollarWithAmount:5] plus: [Money dollarWithAmount:5]]
+                          , [Money dollarWithAmount:10],
+                          @"5$ + 5$ = 10$");
+}
 @end

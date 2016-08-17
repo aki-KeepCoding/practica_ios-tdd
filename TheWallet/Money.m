@@ -42,6 +42,12 @@
     
 }
 
+- (Money *) plus: (Money *) other
+{
+    NSInteger total = [self.amount integerValue] + [other.amount integerValue];
+    return [[Money alloc] initWithAmount:total currency:self.currency];
+}
+
 
 #pragma - overriden
 - (NSString *)description
@@ -51,7 +57,7 @@
 
 - (BOOL) isEqual:(id)object
 {
-    if ([[self currency] isEqual:[object currency]]) {
+    if ([[self currency] isEqual:[object currency]] ) {
         return [self amount] == [object amount];
     } else {
         return NO;
