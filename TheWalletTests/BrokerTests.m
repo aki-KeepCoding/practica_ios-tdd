@@ -36,4 +36,16 @@
     XCTAssertEqualObjects(sum, reduced, @"Conversion to de same currency should be a NOP");
 }
 
+- (void) testReduction
+{
+    Money *tenDollars = [Money dollarWithAmount:10];
+    Money *fiveEuros = [Money euroWithAmount:5];
+    
+    Broker *broker = [[Broker alloc] init];
+    [broker addRate: 2 fromCurrency: @"USD" toCurrency: @"EUR"];
+    
+    Money *reduced = [broker reduce: tenDollars toCurrency:@"EUR"];
+    
+    XCTAssertEqualObjects(reduced, fiveEuros, @"10$ = 5€ with 2:1 tax");
+}
 @end
