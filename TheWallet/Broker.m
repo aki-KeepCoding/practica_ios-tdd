@@ -23,7 +23,21 @@
 }
 - (Money *) reduce: (Money *) money toCurrency: (NSString *) currency
 {
-    return money;
+    Money *result;
+    double rate = [[self.rates objectForKey:[self keyFromCurrency: money.currency
+                                                          toCurrency:currency]] doubleValue];
+    if ([money.currency isEqual:currency]) {
+        result = money;
+    } else if (rate == 0) {
+        [NSException raise: @"NoConversionRateException"
+                    format: @"Broker rates must have a conversion for %@ to %@", money.currency, currency];
+    } else {
+        NSInteger newAmount = [money.amount integerValue] * rate;
+        
+        result = [[Money alloc] initWithAmount:newAmount currency:currency];
+    }
+    return result;
+    
 }
 
 - (void) addRate: (NSInteger) rate
@@ -31,6 +45,7 @@
       toCurrency: (NSString *) toCurrency
 {
     [self.rates setObject:@(rate) forKey: [self keyFromCurrency:fromCurrency toCurrency:toCurrency]];
+    [self.rates setObject:@(1.0/rate) forKey: [self keyFromCurrency:toCurrency toCurrency:fromCurrency]];
 }
 
 #pragma - Utils
