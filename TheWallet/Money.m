@@ -7,6 +7,7 @@
 //
 
 #import "Money.h"
+#import "Broker.h"
 
 @interface Money()
 @property (nonatomic, strong) NSNumber *amount;
@@ -48,6 +49,24 @@
     return [[Money alloc] initWithAmount:total currency:self.currency];
 }
 
+- (id<Money>) reduceToCurrency:(NSString *)currency withBroker:(Broker *)broker
+{
+    Money *result;
+    double rate = [[broker.rates objectForKey:[broker keyFromCurrency: self.currency
+                                                       toCurrency:currency]] doubleValue];
+    if ([self.currency isEqual:currency]) {
+        result = self;
+    } else if (rate == 0) {
+        [NSException raise: @"NoConversionRateException"
+                    format: @"Broker rates must have a conversion for %@ to %@", self.currency, currency];
+    } else {
+        NSInteger newAmount = [self.amount integerValue] * rate;
+        
+        result = [[Money alloc] initWithAmount:newAmount currency:currency];
+    }
+    return result;
+
+}
 
 #pragma - overriden
 - (NSString *)description

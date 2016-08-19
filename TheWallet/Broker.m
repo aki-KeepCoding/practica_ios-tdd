@@ -10,7 +10,7 @@
 #import "Money.h"
 
 @interface Broker()
-@property (nonatomic, strong) NSMutableDictionary *rates;
+
 @end
 @implementation Broker
 
@@ -23,21 +23,8 @@
 }
 - (id<Money>) reduce: (Money *) money toCurrency: (NSString *) currency
 {
-    Money *result;
-    double rate = [[self.rates objectForKey:[self keyFromCurrency: money.currency
-                                                          toCurrency:currency]] doubleValue];
-    if ([money.currency isEqual:currency]) {
-        result = money;
-    } else if (rate == 0) {
-        [NSException raise: @"NoConversionRateException"
-                    format: @"Broker rates must have a conversion for %@ to %@", money.currency, currency];
-    } else {
-        NSInteger newAmount = [money.amount integerValue] * rate;
-        
-        result = [[Money alloc] initWithAmount:newAmount currency:currency];
-    }
-    return result;
-    
+    // Estrategia Double Dispatch >> que money implemente la reducción
+    return [money reduceToCurrency:currency withBroker:self];
 }
 
 - (void) addRate: (NSInteger) rate
