@@ -1,19 +1,21 @@
 //
-//  Wallet.m
+//  WalletTests.m
 //  TheWallet
 //
-//  Created by Akixe on 18/8/16.
+//  Created by Akixe on 19/8/16.
 //  Copyright © 2016 AOA. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "Broker.h"
 #import "Money.h"
-@interface Wallet : XCTestCase
+#import "Broker.h"
+#import "Wallet.h"
+
+@interface WalletTests : XCTestCase
 
 @end
 
-@implementation Wallet
+@implementation WalletTests
 
 - (void)setUp {
     [super setUp];
@@ -24,7 +26,6 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
-
 // 40€ + $20 = $100 con rate 2USD:1EUR
 - (void) testAdditionWithReduction
 {
@@ -34,4 +35,5 @@
     Wallet *wallet = [[Wallet alloc] initWithAmount: 40 currency: @"EUR"];
     [wallet plus: [Money dollarWithAmount:20]];
 }
+
 @end

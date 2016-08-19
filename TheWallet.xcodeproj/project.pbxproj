@@ -15,8 +15,9 @@
 		6182AC031D60911500672839 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */; };
 		6182AC041D60911500672839 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */; };
 		6182AC061D6091AC00672839 /* MoneyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6182AC051D6091AC00672839 /* MoneyTests.m */; };
-		619CAF411D6628110025EB05 /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 619CAF401D6628110025EB05 /* Wallet.m */; };
-		619CAF421D6628110025EB05 /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 619CAF401D6628110025EB05 /* Wallet.m */; };
+		619CAF451D662D950025EB05 /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 619CAF441D662D950025EB05 /* Wallet.m */; };
+		619CAF461D662D950025EB05 /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 619CAF441D662D950025EB05 /* Wallet.m */; };
+		619CAF491D66D9FD0025EB05 /* WalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 619CAF471D66D9FD0025EB05 /* WalletTests.m */; };
 		61E219E61D6076B100670C17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E51D6076B100670C17 /* main.m */; };
 		61E219E91D6076B100670C17 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219E81D6076B100670C17 /* AppDelegate.m */; };
 		61E219EC1D6076B100670C17 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E219EB1D6076B100670C17 /* ViewController.m */; };
@@ -53,7 +54,9 @@
 		6182AC011D60911500672839 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		6182AC021D60911500672839 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		6182AC051D6091AC00672839 /* MoneyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTests.m; sourceTree = "<group>"; };
-		619CAF401D6628110025EB05 /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
+		619CAF431D662D950025EB05 /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
+		619CAF441D662D950025EB05 /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
+		619CAF471D66D9FD0025EB05 /* WalletTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletTests.m; sourceTree = "<group>"; };
 		61E219E11D6076B100670C17 /* TheWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E219E51D6076B100670C17 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61E219E71D6076B100670C17 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,7 +176,7 @@
 			children = (
 				6182AC051D6091AC00672839 /* MoneyTests.m */,
 				614FD96E1D639473004CB2CC /* BrokerTests.m */,
-				619CAF401D6628110025EB05 /* Wallet.m */,
+				619CAF471D66D9FD0025EB05 /* WalletTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,8 @@
 				6182ABFD1D608FAC00672839 /* Money.m */,
 				614FD9711D6432EB004CB2CC /* Broker.h */,
 				614FD9721D6432EB004CB2CC /* Broker.m */,
+				619CAF431D662D950025EB05 /* Wallet.h */,
+				619CAF441D662D950025EB05 /* Wallet.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -321,8 +326,8 @@
 			files = (
 				6182ABFE1D608FAC00672839 /* Money.m in Sources */,
 				6182AC031D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
-				619CAF411D6628110025EB05 /* Wallet.m in Sources */,
 				614FD9731D6432EB004CB2CC /* Broker.m in Sources */,
+				619CAF451D662D950025EB05 /* Wallet.m in Sources */,
 				61E219EC1D6076B100670C17 /* ViewController.m in Sources */,
 				61E219E91D6076B100670C17 /* AppDelegate.m in Sources */,
 				61E219E61D6076B100670C17 /* main.m in Sources */,
@@ -335,9 +340,10 @@
 			files = (
 				614FD9701D639473004CB2CC /* BrokerTests.m in Sources */,
 				6182AC041D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
-				619CAF421D6628110025EB05 /* Wallet.m in Sources */,
+				619CAF461D662D950025EB05 /* Wallet.m in Sources */,
 				6182ABFF1D608FAC00672839 /* Money.m in Sources */,
 				6182AC061D6091AC00672839 /* MoneyTests.m in Sources */,
+				619CAF491D66D9FD0025EB05 /* WalletTests.m in Sources */,
 				614FD9741D6432EB004CB2CC /* Broker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

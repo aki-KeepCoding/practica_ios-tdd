@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Money;
+#import "Money.h"
+
 @interface Broker : NSObject
 
-- (Money *) reduce: (Money *) money toCurrency: (NSString *) currency;
+- (id<Money>) reduce: (Money *) money toCurrency: (NSString *) currency;
 - (void) addRate: (NSInteger) rate
     fromCurrency: (NSString *) fromCurrency
       toCurrency: (NSString *) toCurrency;

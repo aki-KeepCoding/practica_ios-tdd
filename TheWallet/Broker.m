@@ -21,7 +21,7 @@
     }
     return self;
 }
-- (Money *) reduce: (Money *) money toCurrency: (NSString *) currency
+- (id<Money>) reduce: (Money *) money toCurrency: (NSString *) currency
 {
     Money *result;
     double rate = [[self.rates objectForKey:[self keyFromCurrency: money.currency
