@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Money.h"
 
-@interface Wallet : NSObject
+@interface Wallet : NSObject<Money>
 
 @end
