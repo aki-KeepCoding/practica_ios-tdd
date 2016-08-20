@@ -10,7 +10,6 @@
 
 @interface Wallet()
 @property (nonatomic, strong) NSMutableArray *moneys;
-
 @end
 @implementation Wallet
 
@@ -40,5 +39,16 @@
     }
     self.moneys = newMoneys;
     return self;
+}
+
+- (id<Money>) reduceToCurrency:(NSString *)currency withBroker:(Broker *)broker
+{
+    Money *result = [[Money alloc] initWithAmount:0 currency:currency];
+    
+    for (Money *money in self.moneys) {
+        result = [result plus:[money reduceToCurrency:currency withBroker:broker]];
+    }
+    
+    return result;
 }
 @end

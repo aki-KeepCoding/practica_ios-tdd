@@ -21,7 +21,7 @@
     }
     return self;
 }
-- (id<Money>) reduce: (Money *) money toCurrency: (NSString *) currency
+- (Money *) reduce: (id<Money>) money toCurrency: (NSString *) currency
 {
     // Estrategia Double Dispatch >> que money implemente la reducción
     return [money reduceToCurrency:currency withBroker:self];
