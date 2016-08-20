@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610CCB0C1D6835E6006F0BA3 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */; };
+		610CCB0D1D6835E6006F0BA3 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */; };
+		610CCB0E1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */; };
+		610CCB0F1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */; };
+		610CCB121D683648006F0BA3 /* ControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB111D683648006F0BA3 /* ControllerTests.m */; };
 		614FD9701D639473004CB2CC /* BrokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD96E1D639473004CB2CC /* BrokerTests.m */; };
 		614FD9731D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
 		614FD9741D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
@@ -45,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		610CCB091D6835E6006F0BA3 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
+		610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
+		610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleViewController.xib; sourceTree = "<group>"; };
+		610CCB111D683648006F0BA3 /* ControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerTests.m; sourceTree = "<group>"; };
 		614FD96E1D639473004CB2CC /* BrokerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokerTests.m; sourceTree = "<group>"; };
 		614FD9711D6432EB004CB2CC /* Broker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Broker.h; sourceTree = "<group>"; };
 		614FD9721D6432EB004CB2CC /* Broker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Broker.m; sourceTree = "<group>"; };
@@ -98,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610CCB081D683563006F0BA3 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				610CCB091D6835E6006F0BA3 /* SimpleViewController.h */,
+				610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */,
+				610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		610CCB101D6835FD006F0BA3 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				610CCB111D683648006F0BA3 /* ControllerTests.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		6182AC001D6090DB00672839 /* categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +157,7 @@
 		61E219E31D6076B100670C17 /* TheWallet */ = {
 			isa = PBXGroup;
 			children = (
+				610CCB081D683563006F0BA3 /* controllers */,
 				6182AC001D6090DB00672839 /* categories */,
 				61E21A1A1D60787E00670C17 /* models */,
 				61E219E71D6076B100670C17 /* AppDelegate.h */,
@@ -156,6 +184,7 @@
 		61E219FD1D6076B100670C17 /* TheWalletTests */ = {
 			isa = PBXGroup;
 			children = (
+				610CCB101D6835FD006F0BA3 /* controllers */,
 				61E21A171D6077B600670C17 /* Models */,
 				6182ABF41D607ADC00672839 /* Info.plist */,
 			);
@@ -299,6 +328,7 @@
 			files = (
 				61E219F41D6076B100670C17 /* LaunchScreen.storyboard in Resources */,
 				61E219F11D6076B100670C17 /* Assets.xcassets in Resources */,
+				610CCB0E1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */,
 				61E219EF1D6076B100670C17 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610CCB0F1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +357,7 @@
 			files = (
 				6182ABFE1D608FAC00672839 /* Money.m in Sources */,
 				6182AC031D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
+				610CCB0C1D6835E6006F0BA3 /* SimpleViewController.m in Sources */,
 				614FD9731D6432EB004CB2CC /* Broker.m in Sources */,
 				619CAF451D662D950025EB05 /* Wallet.m in Sources */,
 				61E219EC1D6076B100670C17 /* ViewController.m in Sources */,
@@ -340,11 +372,13 @@
 			files = (
 				614FD9701D639473004CB2CC /* BrokerTests.m in Sources */,
 				6182AC041D60911500672839 /* NSObject+GNUStepAddons.m in Sources */,
+				610CCB0D1D6835E6006F0BA3 /* SimpleViewController.m in Sources */,
 				619CAF461D662D950025EB05 /* Wallet.m in Sources */,
 				6182ABFF1D608FAC00672839 /* Money.m in Sources */,
 				6182AC061D6091AC00672839 /* MoneyTests.m in Sources */,
 				619CAF491D66D9FD0025EB05 /* WalletTests.m in Sources */,
 				614FD9741D6432EB004CB2CC /* Broker.m in Sources */,
+				610CCB121D683648006F0BA3 /* ControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
