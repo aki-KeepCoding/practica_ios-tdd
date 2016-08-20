@@ -12,6 +12,8 @@
 		610CCB0E1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */; };
 		610CCB0F1D6835E6006F0BA3 /* SimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */; };
 		610CCB121D683648006F0BA3 /* ControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB111D683648006F0BA3 /* ControllerTests.m */; };
+		610CCB151D683BB6006F0BA3 /* WalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB141D683BB6006F0BA3 /* WalletTableViewController.m */; };
+		610CCB161D683BB6006F0BA3 /* WalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB141D683BB6006F0BA3 /* WalletTableViewController.m */; };
 		614FD9701D639473004CB2CC /* BrokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD96E1D639473004CB2CC /* BrokerTests.m */; };
 		614FD9731D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
 		614FD9741D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
@@ -54,6 +56,8 @@
 		610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
 		610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleViewController.xib; sourceTree = "<group>"; };
 		610CCB111D683648006F0BA3 /* ControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerTests.m; sourceTree = "<group>"; };
+		610CCB131D683BB6006F0BA3 /* WalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletTableViewController.h; sourceTree = "<group>"; };
+		610CCB141D683BB6006F0BA3 /* WalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletTableViewController.m; sourceTree = "<group>"; };
 		614FD96E1D639473004CB2CC /* BrokerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokerTests.m; sourceTree = "<group>"; };
 		614FD9711D6432EB004CB2CC /* Broker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Broker.h; sourceTree = "<group>"; };
 		614FD9721D6432EB004CB2CC /* Broker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Broker.m; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				610CCB091D6835E6006F0BA3 /* SimpleViewController.h */,
 				610CCB0A1D6835E6006F0BA3 /* SimpleViewController.m */,
 				610CCB0B1D6835E6006F0BA3 /* SimpleViewController.xib */,
+				610CCB131D683BB6006F0BA3 /* WalletTableViewController.h */,
+				610CCB141D683BB6006F0BA3 /* WalletTableViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				610CCB0C1D6835E6006F0BA3 /* SimpleViewController.m in Sources */,
 				614FD9731D6432EB004CB2CC /* Broker.m in Sources */,
 				619CAF451D662D950025EB05 /* Wallet.m in Sources */,
+				610CCB151D683BB6006F0BA3 /* WalletTableViewController.m in Sources */,
 				61E219EC1D6076B100670C17 /* ViewController.m in Sources */,
 				61E219E91D6076B100670C17 /* AppDelegate.m in Sources */,
 				61E219E61D6076B100670C17 /* main.m in Sources */,
@@ -378,6 +385,7 @@
 				6182AC061D6091AC00672839 /* MoneyTests.m in Sources */,
 				619CAF491D66D9FD0025EB05 /* WalletTests.m in Sources */,
 				614FD9741D6432EB004CB2CC /* Broker.m in Sources */,
+				610CCB161D683BB6006F0BA3 /* WalletTableViewController.m in Sources */,
 				610CCB121D683648006F0BA3 /* ControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
