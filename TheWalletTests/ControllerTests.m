@@ -60,7 +60,7 @@
 
 - (void) testThatNumberOfCellsIsNumberOfMoneysPlusOne
 {
-    
+    XCTAssertEqual(self.wallet.count + 1, [self.walletTVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys + 1 (the total)");
 }
 @end
 
