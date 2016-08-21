@@ -63,17 +63,6 @@
     XCTAssertEqual(self.wallet.count + 1, [self.walletTVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys + 1 (the total)");
 }
 
-- (void) testThatSubscribesToMemoryWarning {
-    // NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    //   No interesa implementar NSNotificationCenter real...creamos un fake>>
-    FakeNotificationCenter *fake = [FakeNotificationCenter new];
-    BigAndFatObject *fat = [BigAndFatObject new];
-    [fat subscribeToMemoryWarning: fake];
-    
-    NSDictionary *obs = [fake observers];
-    id observer = [obs objectForKey:UIApplicationDidReceiveMemoryWarningNotification];
-    
-    XCTAssertEqualObjects(observer, fat, @"FAt object must subscribe to UIApplicationDidReceiveMemoryWarningNotification");
-}
+
 @end
 
