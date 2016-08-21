@@ -17,6 +17,7 @@
 		610CCB1A1D68788F006F0BA3 /* FakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB191D68788F006F0BA3 /* FakeNotificationCenter.m */; };
 		610CCB1B1D68788F006F0BA3 /* FakeNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB191D68788F006F0BA3 /* FakeNotificationCenter.m */; };
 		610CCB1D1D6878DB006F0BA3 /* NotificationCenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB1C1D6878DB006F0BA3 /* NotificationCenterTests.m */; };
+		610CCB201D699437006F0BA3 /* NetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 610CCB1F1D699437006F0BA3 /* NetworkTests.m */; };
 		614FD9701D639473004CB2CC /* BrokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD96E1D639473004CB2CC /* BrokerTests.m */; };
 		614FD9731D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
 		614FD9741D6432EB004CB2CC /* Broker.m in Sources */ = {isa = PBXBuildFile; fileRef = 614FD9721D6432EB004CB2CC /* Broker.m */; };
@@ -64,6 +65,7 @@
 		610CCB181D68788F006F0BA3 /* FakeNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeNotificationCenter.h; sourceTree = "<group>"; };
 		610CCB191D68788F006F0BA3 /* FakeNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeNotificationCenter.m; sourceTree = "<group>"; };
 		610CCB1C1D6878DB006F0BA3 /* NotificationCenterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCenterTests.m; sourceTree = "<group>"; };
+		610CCB1F1D699437006F0BA3 /* NetworkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTests.m; sourceTree = "<group>"; };
 		614FD96E1D639473004CB2CC /* BrokerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokerTests.m; sourceTree = "<group>"; };
 		614FD9711D6432EB004CB2CC /* Broker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Broker.h; sourceTree = "<group>"; };
 		614FD9721D6432EB004CB2CC /* Broker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Broker.m; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 			name = singletons;
 			sourceTree = "<group>";
 		};
+		610CCB1E1D699423006F0BA3 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				610CCB1F1D699437006F0BA3 /* NetworkTests.m */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
 		6182AC001D6090DB00672839 /* categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		61E219FD1D6076B100670C17 /* TheWalletTests */ = {
 			isa = PBXGroup;
 			children = (
+				610CCB1E1D699423006F0BA3 /* network */,
 				610CCB171D68786B006F0BA3 /* singletons */,
 				610CCB101D6835FD006F0BA3 /* controllers */,
 				61E21A171D6077B600670C17 /* Models */,
@@ -407,6 +418,7 @@
 				610CCB1B1D68788F006F0BA3 /* FakeNotificationCenter.m in Sources */,
 				610CCB161D683BB6006F0BA3 /* WalletTableViewController.m in Sources */,
 				610CCB121D683648006F0BA3 /* ControllerTests.m in Sources */,
+				610CCB201D699437006F0BA3 /* NetworkTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
