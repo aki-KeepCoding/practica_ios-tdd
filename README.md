@@ -4,4 +4,4 @@ Desarrollo realizado siguiendo el curso [TDD con iOS](http://keepcoding.es/cours
 
 Adicionalmente, y tal como se pedía en el enunciado, he agregado una TableView que renderiza el estado del objeto Wallet.
 
-![](https://dr.tt/?d=jyzyff1dc74pbkm/2016-08-27%20at%2010.08.png/)
+![](https://dl.dropboxusercontent.com/s/oq52948x828r0hq/2016-08-27%20at%2010.08%20%281%29.png)
