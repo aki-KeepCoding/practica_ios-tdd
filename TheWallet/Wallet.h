@@ -13,4 +13,10 @@
 @property (nonatomic, readonly) NSUInteger count;
 
 - (void) subscribeToMemoryWarning:(NSNotificationCenter *) nc;
+- (NSUInteger) countByCurrency: (NSString *) currency;
+- (NSUInteger) currencyCount;
+- (NSString *) currencyAtIndex: (NSUInteger) index;
+- (Money *) totalByCurrency: (NSString *) currency;
+- (Money *) moneyAtIndex: (NSInteger) index forCurrrency: (NSString *) currency;
+
 @end

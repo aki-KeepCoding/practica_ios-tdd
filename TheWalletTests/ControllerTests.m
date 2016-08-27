@@ -10,14 +10,20 @@
 #import "SimpleViewController.h"
 #import "WalletTableViewController.h"
 #import "Wallet.h"
+#import "Broker.h"
+
 @interface ControllerTests : XCTestCase
 @property (nonatomic, strong) SimpleViewController *simpleVC;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) UILabel *label;
 
+
+// WalletTableViewCtrl
 @property (nonatomic, strong) WalletTableViewController *walletTVC;
 @property (nonatomic, strong) Wallet *wallet;
-@end
+@property (nonatomic, strong) Broker *broker;
+@property (nonatomic, strong) UITableView *mockTableView;
+@end;
 
 @implementation ControllerTests
 
@@ -30,8 +36,13 @@
     self.label = [[UILabel alloc] initWithFrame:CGRectZero];
     self.simpleVC.displayLabel = self.label;
     
-    self.wallet = [[Wallet alloc] initWithAmount:1 currency:@"USD"];
-    self.walletTVC = [[WalletTableViewController alloc] initWithModel: self.wallet];
+    // WalletTableViewCtrl
+    self.wallet = [[Wallet alloc] initWithAmount:1 currency:@"EUR"];
+    self.broker = [[Broker alloc] init];
+    [self.broker addRate: 2 fromCurrency: @"EUR" toCurrency: @"USD"];
+    self.walletTVC = [[WalletTableViewController alloc] initWithModel: self.wallet andBroker: self.broker];
+    
+    self.mockTableView = [[UITableView alloc] init];
 }
 
 - (void)tearDown {
@@ -40,6 +51,11 @@
     self.simpleVC = nil;
     self.button = nil;
     self.label = nil;
+    
+    // WalletTableViewCtrl
+    self.wallet = nil;
+    self.broker = nil;
+    self.mockTableView = nil;
 }
 
 
@@ -52,15 +68,36 @@
     XCTAssertEqualObjects(self.button.titleLabel.text, self.label.text, @"Button and label should have same text");
 }
 
-- (void) testThatTableHasOneSection
+
+
+// WalletTableViewCtrl
+- (void) testThatNumberOfSectionsIsNumberOfCurrenciesPlusOne
 {
-    NSUInteger sections = [self.walletTVC numberOfSectionsInTableView:nil];
-    XCTAssertEqual(sections, 1, @"Ther can only be one");
+    NSUInteger sections = [self.walletTVC numberOfSectionsInTableView:self.mockTableView];
+    XCTAssertEqual(sections, 2, @"There can only be one");
 }
 
-- (void) testThatNumberOfCellsIsNumberOfMoneysPlusOne
+- (void) testThatNumberOfCellsIsNumberOfMoneysPlusOneWhenMoreThanOneMoneyForAGivenCurrency
 {
-    XCTAssertEqual(self.wallet.count + 1, [self.walletTVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys + 1 (the total)");
+    [self.wallet plus:[Money euroWithAmount:10]];
+    XCTAssertEqual([self.wallet countByCurrency:@"EUR"] + 1, [self.walletTVC tableView:self.mockTableView numberOfRowsInSection:0], @"Number of cells is the number of Euros + 1 (2 uros + the total cell)");
+}
+
+- (void) testThatNumberOfCellsIsNumberOfMoneysWhenOnlyOneMoneyForAGivenCurrency
+{
+    XCTAssertEqual([self.wallet countByCurrency:@"EUR"], [self.walletTVC tableView:self.mockTableView numberOfRowsInSection:0], @"Number of cells is 1 (Only one Euro in the wallet)");
+}
+
+- (void) testThatTitleForSectionIsTheCurrencyName
+{
+    NSString *sectionTitle = [self.walletTVC tableView:self.mockTableView titleForHeaderInSection:0];
+    XCTAssertEqualObjects(@"EUR", sectionTitle, @"The first sections title of this wallet table view is EUR");
+}
+
+- (void) testThatLastSectionsTitleIsTotal
+{
+    NSString *sectionTitle = [self.walletTVC tableView:self.mockTableView titleForHeaderInSection:[self.wallet currencyCount]];
+    XCTAssertEqualObjects(@"Total", sectionTitle, @"Last section title of wallet table view is Total");
 }
 
 

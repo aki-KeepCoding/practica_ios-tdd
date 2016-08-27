@@ -7,6 +7,7 @@
 //
 
 #import "Wallet.h"
+#import "Money.h"
 @import UIKit;
 
 @interface Wallet()
@@ -53,6 +54,61 @@
         result = [result plus:[money reduceToCurrency:currency withBroker:broker]];
     }
     
+    return result;
+}
+
+
+- (NSUInteger) countByCurrency: (NSString *) currency
+{
+    NSUInteger c = 0;
+    for (Money *money in self.moneys) {
+        if ([money.currency isEqual:currency]) {
+            c++;
+        }
+    }
+    return c;
+}
+
+- (NSUInteger) currencyCount
+{
+    NSMutableSet *currencies = [NSMutableSet set];
+    for (Money *money in self.moneys) {
+        [currencies addObject:money.currency];
+    }
+    return [currencies count];
+}
+
+- (NSString *) currencyAtIndex: (NSUInteger) index
+{
+    NSMutableSet *currencies = [NSMutableSet set];
+    for (Money *money in self.moneys) {
+        [currencies addObject:money.currency];
+    }
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"description" ascending:YES];
+    NSArray *sortedCurrencies = [currencies sortedArrayUsingDescriptors: [NSArray arrayWithObject:descriptor]];
+    return [sortedCurrencies objectAtIndex:index];
+}
+
+- (Money *) moneyAtIndex: (NSInteger) index forCurrrency: (NSString *) currency
+{
+    NSMutableArray *currencyMoneys = [NSMutableArray array];
+    for (Money *money in self.moneys) {
+        if ([money.currency isEqual:currency]) {
+            [currencyMoneys addObject: money];
+        }
+    }
+    return [currencyMoneys objectAtIndex:index];
+}
+
+- (Money *) totalByCurrency: (NSString *) currency
+{
+    NSUInteger totalAmount = 0;
+    for (Money *money in self.moneys) {
+        if ([money.currency isEqual:currency]) {
+            totalAmount += [money.amount integerValue];
+        }
+    }
+    Money *result = [[Money alloc] initWithAmount: totalAmount currency: currency];
     return result;
 }
 

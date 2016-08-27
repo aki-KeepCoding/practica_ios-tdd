@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WalletTableViewController.h"
+#import "Wallet.h"
+#import "Broker.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +19,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Modelo
+    Broker *broker = [[Broker alloc] init];
+    [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+    Wallet *wallet = [[Wallet alloc] initWithAmount:1 currency:@"EUR"];
+    [wallet plus:[Money euroWithAmount:20]];
+    [wallet plus:[Money euroWithAmount:30]];
+    [wallet plus:[Money dollarWithAmount:10]];
+    [wallet plus:[Money dollarWithAmount:10]];
+    
+    WalletTableViewController *walletTVC = [[WalletTableViewController alloc] initWithModel:wallet andBroker:broker];
+    
+    
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:walletTVC];
+    
+    self.window.rootViewController = navCtrl;
+    [self.window makeKeyAndVisible ];
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

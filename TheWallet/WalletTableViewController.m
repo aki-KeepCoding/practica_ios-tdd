@@ -8,17 +8,20 @@
 
 #import "WalletTableViewController.h"
 #import "Wallet.h"
+#import "Broker.h"
 
 @interface WalletTableViewController ()
 @property (nonatomic, strong) Wallet *wallet;
+@property (nonatomic, strong) Broker *broker;
 @end
 
 @implementation WalletTableViewController
 
-- (id) initWithModel: (Wallet *) wallet
+- (id) initWithModel: (Wallet *) wallet andBroker: (Broker *) broker
 {
     if (self = [super initWithStyle:UITableViewStylePlain]){
         _wallet = wallet;
+        _broker = broker;
     }
     return self;
 }
@@ -40,23 +43,78 @@
 
 #pragma mark - Table view data source
 
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *result = @"";
+    
+    if (section > [self.wallet currencyCount]) {
+        result = nil;
+    } else if (section == [self.wallet currencyCount]) {
+        result = @"Total";
+    } else {
+        result = [self.wallet currencyAtIndex:section];
+    }
+    return result;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.wallet currencyCount] + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.wallet count] + 1;
+    NSInteger result = 0;
+    // si es la sección del Total
+    if (section + 1 > [self.wallet currencyCount]) {
+        result = 1;
+    } else {
+        NSString *sectionCurrency = [self.wallet currencyAtIndex:section];
+        NSUInteger currencyCountForSection = [self.wallet countByCurrency:sectionCurrency];
+        if (currencyCountForSection == 1) {
+            result = 1;
+        } else {
+            result = currencyCountForSection + 1;
+        }
+    }
+    return result;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+    static NSString *cellId = @"moneyCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellId];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
+        
+    }
     
+    // Ves si es la sección de TOTAL
+    if (indexPath.section + 1 > [self.wallet currencyCount]) {
+        cell.textLabel.text = @"TOTAL (EUR)";
+        Money *total = [self.wallet reduceToCurrency:@"EUR" withBroker: self.broker];
+        cell.detailTextLabel.text = [total.amount stringValue];
+    } else {
+        // Ver si es una celda de una moneda o de un total
+        //    1. Total de monedas en la sección actual
+        NSString *sectionCurrency = [self.wallet currencyAtIndex:indexPath.section];
+        NSUInteger moneyCountForCurrency = [self.wallet countByCurrency:sectionCurrency];
+        
+        //    2. Si el indexPath.row(+1 pq cuenta de 0) es monedas + 1 para la divisa actual se trata de la celda de total
+        if (indexPath.row + 1 > moneyCountForCurrency) {
+            // 2a. Calcular total
+            cell.textLabel.text = [@"Total " stringByAppendingString: sectionCurrency];
+            Money *total = [self.wallet totalByCurrency:sectionCurrency];
+            cell.detailTextLabel.text = [total.amount stringValue];
+        } else {
+            // 2b. Celda "normal". Pintar divisa y valor
+            Money *money = [self.wallet moneyAtIndex:indexPath.row forCurrrency:sectionCurrency];
+            cell.textLabel.text = money.currency;
+            cell.detailTextLabel.text = [money.amount stringValue];
+        }
+    }
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
